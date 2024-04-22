@@ -15,7 +15,7 @@ provider "aws" {
 
 
 module "asg" {
-  source = "../modules/asg_simple"
+  source = "arul-ap/asg/aws"
   org = "abc"
   proj = "proj-x"
   env = "dev"
