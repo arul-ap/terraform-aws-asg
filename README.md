@@ -1,0 +1,1 @@
+Module to create Auto Scaling Group based on instance template.
