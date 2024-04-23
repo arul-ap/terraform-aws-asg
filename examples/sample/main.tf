@@ -16,20 +16,20 @@ provider "aws" {
 
 module "asg" {
   source = "arul-ap/asg/aws"
-  org = "abc"
-  proj = "proj-x"
-  env = "dev"
+  org    = "abc"
+  proj   = "proj-x"
+  env    = "dev"
   lt = {
-    name = "lt-01"
-    ami_id = "ami-0910e4162f162c238"
+    name          = "lt-01"
+    ami_id        = "ami-0910e4162f162c238"
     instance_type = "t2.micro"
   }
   asg = {
-    name = "asg-01"
-    subnet_id = [module.vpc.public_subnet_id["web-subnet-01"],module.vpc.public_subnet_id["web-subnet-02"],module.vpc.public_subnet_id["web-subnet-03"]]
-    lb_tg_arn = module.alb_public_http.tg_arn["tg-03"]
-    min_size = 1
-    max_size = 1
+    name         = "asg-01"
+    subnet_id    = [module.vpc.public_subnet_id["web-subnet-01"], module.vpc.public_subnet_id["web-subnet-02"], module.vpc.public_subnet_id["web-subnet-03"]]
+    lb_tg_arn    = module.alb_public_http.tg_arn["tg-03"]
+    min_size     = 1
+    max_size     = 1
     desired_size = 1
   }
 }
